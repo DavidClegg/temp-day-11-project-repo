@@ -159,6 +159,9 @@ i a{
 #project1  a:visited{color: lightblue;}
 
 /*POPUP*/
+dialog{
+    background: #e3f5f9;
+}
 .popup{
     width: 60rem;
     display: grid;
