@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Adding a script from fontawesome to enable text icons-->
+    <script src="https://kit.fontawesome.com/2d31a1d667.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>David Clegg</title>
+</head>
+<body>
+    <header id="home" title = "header">
+        <img src="mona.png" alt="">
+        <nav title = "navigation">
+            <a href="#home">Home</a>
+            <a href="#blog">Blog</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <!--These are just ID target references. I'm not sure if we're going to be making pages for these later.-->
+        </nav>
+    </header>
+    
+    <section title="Introductory Paragraph" class="about">
+        <a href="#home" class="title"><h2 data-color="blue">Welcome to my website!</h2></a> 
+        <p>I'm a novice Front End Web Developer. My aim is to succeed in my studies and create tools to improve the productivity of others. I've created this sit to showcase some of those tools, and grow my skills.</p>
+    </section>
+
+    <section title="About Me" class="about">
+        <h3>About Me</h3>
+        <p>Hi👋</p>
+        <p>I started learning web development 3 years ago. It was rough going, but I perservered and learned a diverse set of skills and interesting effects. Now I feel confident in my abilities to design, develop, and deploy solutions that improve the world around me.</p>
+        <section title="How to find me" class="socials">
+            <p>You can find my past works on        <a href="https://github.com/DavidClegg" target="_blank">Github<i class="icon fa-brands fa-square-github"></i></a></p>
+            <p>You can contact me through           <a href="https://www.linkedin.com/in/david-clegg-43380915b/" target="_blank">LinkedIn<i class="icon fa-brands fa-linkedin"></i></a></p>
+            <p>You can find out what I'm up to on   <a href="" target="_blank">Twitter<i class="icon fa-brands fa-square-twitter"></i></a></p>
+        </section>
+    </section>
+
+    <section title="Site Explanation" class="about">
+        <h3>About My Page</h3>
+        <p>This page contains a small selection of sections that lay out basic information about the site itself, it's purpose, and about myself as a developer.</p>
+
+        <p>I have a basic landing, or home, page. This gives a broad overview to new users and prospective customers.
+            There is also a blog that showcases information about my self and my projects.
+            And finally I have a contact page for further communications.</p>
+    </section>
+
+    <article id="blog">
+        <a href="#blog" class="title"><h2 class="blog-title" data-color="blue">Blog</h2></a>
+        <h3>My first difficult project</h3>
+        <p>My journey for web development started with <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>. FreeCodeCamp is a teaching tool for many web technologies. It was an uphill struggle at first, but the self-paced nature of the content helped me learn the basic fundamentals of web development.</p>
+        <p>From there I began trying to create simple tools to help with my daily life. My first project was a working Note Taker. Initially I started out with a simple list and an input box in HTML.</p>
+            <section class="code">
+                <code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;input type="text"&gt;
+&lt;button click="additem"&gt;Add Item&lt;/button&gt;</code>
+                <form action="">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <input type="text">
+    <button click="additem">Add Item</button>
+                </form>
+            </section>
+
+        <p>This was fun to look at, once I wrote the code to add items to the list:</p>
+        <code>function additem(){
+    let input = document.querySelector("input");
+    list.innerHTML += `&lt;li&gt;${input.value}&lt;/li&gt;`
+}</code>
+        <p>But losing my shopping list when I refresh the page was frustrating.</p>
+        <p>I took to Google and started furiously typing in every solution to the problem I could think of. "Other websites store data; How hard could it be?!"</p>
+
+        <p>Eventually I stumbled upon the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API">localstorage API</a>. By creating a list of notes as a JSON object, I was able to save between sessions locally. All it took was a couple of functions (one to save and one to load), splitting the data string, and my app would do everything I needed.</p> 
+        
+        <code>function save(){
+    localstorage.setItem('Notes', list)
+}
+function load(){
+    let data = localstorage.getItem('Notes');
+    list = data.split(",");
+}</code>
+        
+        <p>No longer would my shopping list be lost to the aether after refreshing my page!</p>
+
+
+    </article>
+
+    <!--PROJECT SECTION-->
+    <h2 data-color="blue">Projects</h2>
+    <section id="projects">
+        <div class="project" id="project1" onclick="openDialog(this)" data-dialog="#pr1">
+            <!--a href="" target="_blank"><img src="" alt=""></a-->
+            <img class="thumbnail" src="sortgraph_thumb.png" alt="">
+            <div class="description">
+                <h4 class="title">Sorting Algorithm</h4>
+            </div>
+        </div>
+        <dialog id="pr1" onclick="this.close()">
+            <div class="popup" >
+                <img src="sortgraph_sc.png" alt="">
+                <div class="description" >
+                    <h4>Sorting Algorithm</h4>
+                    <p>This is a simple bubble sort sorting project. I want to learn and implement a simple sorting algorithm.</p>
+                    <div class="links">
+                        <a href="https://github.com/DavidClegg/SortingGraphProject" target="_blank">Page</a>
+                        <a href="https://github.com/DavidClegg/SortingGraphProject" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+        </dialog> 
+
+        <div class="project" onclick="openDialog(this)" data-dialog="#pr2">
+            <!--a href="" target="_blank"><img src="" alt=""></a-->
+            <img class="thumbnail" src="" alt="" style="background: purple;">
+            <div class="description">
+                <h4 class="title">Project 2</h4>
+            </div>
+            </div>
+        </div>
+        <dialog id="pr2" onclick="this.close()">
+            <div class="popup" >
+                <img src="" alt="" style="background: purple;">
+                <div class="description" >
+                    <h4>Project 2</h4>
+                    <p>This is a simple bubble sort sorting project. I want to learn and implement a simple sorting algorithm.</p>
+                    <div class="links">
+                        <a href="" target="_blank">Page</a>
+                        <a href="" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+        </dialog> 
+
+        <div class="project" onclick="openDialog(this)" data-dialog="#pr3">
+            <!--a href="" target="_blank"><img src="" alt=""></a-->
+            <img class="thumbnail" src="" alt="" style="background: green;">
+            <div class="description">
+                <h4 class="title">Project 3</h4>
+            </div>
+        </div>
+        <dialog id="pr3" onclick="this.close()">
+            <div class="popup" >
+                <img src="" alt="" style="background:green;">
+                <div class="description" >
+                    <h4>Project 3</h4>
+                    <p>This is a simple bubble sort sorting project. I want to learn and implement a simple sorting algorithm.</p>
+                    <div class="links">
+                        <a href="" target="_blank">Page</a>
+                        <a href="" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+        </dialog> 
+    </section>
+    <!--PROJECT SECTION-->
+    
+    <footer>
+      <section title="Call to Action!" id="contact">
+        <form action="/example.html" method="post">
+            <p>Stay Subscribed to Stay Up-to-date:</p>
+            <input type="text" placeholder="email">
+            <input type="submit" value="Subscribe">
+        </form>
+    </section>
+        <i>The header image is from <a href="https://youtu.be/4Se0_w0ISYk?t=1021">This Talk about Generative Art</a> by Tim Holman.</i><br>
+        <i>The brand icons are from <a href="https://fontawesome.com/">Font Awesome</a>.</i>
+    </footer>
+</body>
+<script>
+    // I wanted to use HTML data attributes in CSS, but no browser supports attr() getting data without JavaScript at the moment.
+    let titles = document.querySelectorAll("h2");
+    [...titles].forEach(title => {
+        let data = title.dataset.color || "#222";
+        title.style["color"] = data;
+        title.style["box-shadow"] = `0px 10px 10px -11px ${data}`;
+        }) 
+        /* For every h2 title, 
+         grab the data-color attribute or use #222,
+         set the color to the data-color,
+         set the box-shadow to the box shadow plus data-color
+         
+         I couldn't just use box-shadow-color because that's not an available style attribute.
+
+         Also the [...] spread syntax is because HTML Element Arrays are a specific type, and that type doesn't have a forEach Method. I could have also extended that class, but I can't remember how to do that and it would take me longer.
+
+         In the end I just went with blue titles, but I'm leaving this code because I think it might be useful later.
+        */
+
+    function openDialog(el){
+        // This is a function to open the popup to show the project larger,
+        // based on the id that is the dialog id data attribute
+        let id = el.dataset.dialog;
+        let target = document.querySelector(id);
+        target.showModal();
+    }
+    let popups = document.querySelectorAll(".popup");
+    [...popups].forEach(popup => {
+        popup.addEventListener("click",function(event){
+        event.stopPropagation();
+        })
+    }) 
+    /*This code allows me to use a dialog popup and make it interactible, without closing the popup on interaction. This still allows the popup to be closed bye click off of it, which seems like an intuitive interaction.*/
+    
+</script>
+</html>
+<!--
+    Add:
+[x] A font family
+[x] Indentation
+[x] Borders
+[x] Backgrounds and colors to text headings and paragraphs
+[x] Grid Organization to text and/or images
+[ ] Project section
+
+-->
